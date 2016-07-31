@@ -1,0 +1,5 @@
+/sencha-workspace/build/
+/sencha-workspace/ext/
+/sencha-workspace/ext-*/
+/sencha-workspace/EmergenceDbtool/bootstrap.*
+/sencha-workspace/EmergenceDbtool/sass/example/bootstrap.*
