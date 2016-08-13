@@ -7,10 +7,13 @@ Ext.define('EmergenceDbtool.controller.Dbtool', {
     // entry points
     control: {
         'dbtool-container': {
-            render: 'onDbtoolContainerRender'
+            render: 'onContainerRender'
+        },
+        'dbtool-tabpanel button[action="newsql"]': {
+            click: 'onNewsqlButtonClick'
         },
         'dbtool-databasetree': {
-            beforeitemdblclick: 'onDbtoolDatabaseTreeBeforeItemDblClick'
+            beforeitemdblclick: 'onDatabaseTreeBeforeItemDblClick'
         }
     },
 
@@ -51,12 +54,16 @@ Ext.define('EmergenceDbtool.controller.Dbtool', {
 
 
     // event handlers
-    onDbtoolContainerRender: function() {
+    onContainerRender: function() {
         //this.getTablesStore().load();
     },
 
-    onDbtoolTableListRender: function(list) {
+    onTableListRender: function(list) {
         list.getStore().load();
+    },
+
+    onNewsqlButtonClick: function() {
+        console.log('button click!!!');
     },
 
     onDatabasesStoreLoad: function(store) {
@@ -71,7 +78,7 @@ Ext.define('EmergenceDbtool.controller.Dbtool', {
         console.log(operation);
     },
 
-    onDbtoolDatabaseTreeBeforeItemDblClick: function(cmp, record) {
+    onDatabaseTreeBeforeItemDblClick: function(cmp, record) {
         var me = this,
             db = record.get('db');
         console.log('onDbtoolDatabaseTreeItemDblClick');
