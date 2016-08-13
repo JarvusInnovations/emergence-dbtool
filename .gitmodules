@@ -1,0 +1,3 @@
+[submodule "sencha-workspace/packages/jarvus-monaco-editor"]
+	path = sencha-workspace/packages/jarvus-monaco-editor
+	url = https://github.com/JarvusInnovations/jarvus-monaco-editor.git
