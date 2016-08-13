@@ -33,7 +33,8 @@ Ext.define('EmergenceDbtool.controller.Dbtool', {
     views: [
         'Container',
         'DatabaseTree',
-        'TabPanel'
+        'TabPanel',
+        'Editor'
     ],
 
     stores: [
@@ -64,6 +65,12 @@ Ext.define('EmergenceDbtool.controller.Dbtool', {
 
     onNewsqlButtonClick: function() {
         console.log('button click!!!');
+        var tabpanel = this.getContainerTabPanel(),
+            editor = Ext.create('EmergenceDbtool.view.Editor', {
+                title: 'edit'
+            });
+
+        tabpanel.add(editor);
     },
 
     onDatabasesStoreLoad: function(store) {
